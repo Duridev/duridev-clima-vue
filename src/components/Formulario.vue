@@ -53,7 +53,7 @@
             <label for="pais">País</label>
             <select
                 id="pais"
-                v-model="busqueda.ciudad"
+                v-model="busqueda.pais"
             >
                 <option value="">-- Seleccione un país --</option>
                 <option v-for="pais in paises" :value="pais.codigo"> {{ pais.nombre }}</option>
@@ -63,7 +63,7 @@
         <input 
             type="submit" 
             value="Consultar Clima" 
-        >
+        />
     </form>
 </template>
 
