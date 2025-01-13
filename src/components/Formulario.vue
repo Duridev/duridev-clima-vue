@@ -67,3 +67,16 @@
     </form>
 </template>
 
+<style>
+  select {
+    background-color: #f0f0f0; /* Cambia el fondo del elemento select */
+    color: #333; /* Cambia el color del texto */
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+
+  option {
+    background-color: #fff; /* Cambia el fondo del menú desplegable */
+    color: #000; /* Cambia el color del texto de las opciones */
+  }
+</style>
