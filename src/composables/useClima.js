@@ -1,6 +1,9 @@
+import { ref, computed } from 'vue'
 import axios from 'axios'
 
 export default function useClima() {
+
+    const clima = ref({})
 
     const obtenerClima = async ({ciudad, pais}) => {
         // Importar el Api Key
@@ -15,17 +18,23 @@ export default function useClima() {
 
             // Obtener el Clima
             const urlClima = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`
-            
+
             const { data:resultado } = await axios(urlClima)
+
+            clima.value = resultado
             
         } catch (error) {
             
         }
-
     }
 
+    const mostrarClima = computed(() => {
+        return Object.values(clima.value).length > 0
+    })
 
     return {
-        obtenerClima
+        obtenerClima,
+        clima,
+        mostrarClima
     }
 }
