@@ -32,9 +32,12 @@ export default function useClima() {
         return Object.values(clima.value).length > 0
     })
 
+    const formatearTemperatura = temperatura => parseInt(temperaatura - 273.15)
+
     return {
         obtenerClima,
         clima,
-        mostrarClima
+        mostrarClima,
+        formatearTemperatura
     }
 }

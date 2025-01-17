@@ -18,6 +18,7 @@
 
     <Clima
       v-if="mostrarClima"
+      :clima="clima"
      />
   
   </div>
