@@ -15,7 +15,12 @@ export default function useClima() {
             //Obtener Latitud y longitud
             const url = `http://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=1&appid=${key}`
 
+            console.log(url);
+
             const { data } = await axios(url)
+
+            console.log(url);
+
             const { lat, lon } = data[0]
 
             // Obtener el Clima
@@ -36,7 +41,7 @@ export default function useClima() {
         return Object.values(clima.value).length > 0
     })
 
-    const formatearTemperatura = temperatura => parseInt(temperaatura - 273.15)
+    const formatearTemperatura = temperatura => parseInt(temperatura - 273.15)
 
     return {
         obtenerClima,
